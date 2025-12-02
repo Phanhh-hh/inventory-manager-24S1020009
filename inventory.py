@@ -1,27 +1,44 @@
-# Danh sách sản phẩm toàn cục
+# Danh sach san pham toan cuc
 products = []
+
+def add_product(name, price, quantity):
+    product = {
+        'name': name,
+        'price': price,
+        'qty': quantity
+    }
+    products.append(product)
+    print(">> Da them san pham thanh cong!")
 
 def main():
     while True:
-        print("\n=== INVENTORY MANAGER ===")
-        print("1. Xem danh sách sản phẩm")
-        print("2. Thêm sản phẩm")
-        print("3. Xóa sản phẩm")
-        print("4. Thoát")
+        print("=== INVENTORY MANAGER ===")
+        print("1. Xem danh sach san pham")
+        print("2. Them san pham")
+        print("3. Xoa san pham")
+        print("4. Thoat")
 
-        choice = input("Chọn chức năng: ")
+        choice = input("Chon chuc nang: ")
 
         if choice == "1":
-            print(">> Chức năng xem danh sách (sẽ làm sau)")
+            print(">> Chuc nang xem danh sach (se lam sau)")
+
         elif choice == "2":
-            print(">> Chức năng thêm sản phẩm (sẽ làm sau)")
+            # Nhap thong tin san pham
+            name = input("Nhap ten san pham: ")
+            price = int(input("Nhap gia san pham: "))
+            quantity = int(input("Nhap so luong: "))
+            add_product(name, price, quantity)
+
         elif choice == "3":
-            print(">> Chức năng xóa sản phẩm (sẽ làm sau)")
+            print(">> Chuc nang xoa san pham (se lam sau)")
+
         elif choice == "4":
-            print("Thoát chương trình...")
+            print("Thoat chuong trinh...")
             break
+
         else:
-            print("Lựa chọn không hợp lệ.")
+            print("Lua chon khong hop le.")
 
 if __name__ == "__main__":
     main()
