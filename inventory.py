@@ -9,6 +9,13 @@ def add_product(name, price, quantity):
     }
     products.append(product)
     print(">> Da them san pham thanh cong!")
+def view_inventory():
+    if not products:
+        print(">> Kho hang dang trong!")
+        return
+    print("\n=== DANH SACH SAN PHAM ===")
+    for i, product in enumerate(products, start=1):
+        print(f"{i}. {product['name']} - Gia: {product['price']} - So luong: {product['qty']}")
 
 def main():
     while True:
@@ -21,7 +28,8 @@ def main():
         choice = input("Chon chuc nang: ")
 
         if choice == "1":
-            print(">> Chuc nang xem danh sach (se lam sau)")
+            view_inventory()
+
 
         elif choice == "2":
             # Nhap thong tin san pham
